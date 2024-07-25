@@ -17,7 +17,6 @@ fetch(
   .then((json) => {
     let data = json.results;
     for (let element of data) {
-      console.log(element)
       let image = element.poster_path;
       let title = element.title;
       let overview = element.overview;
@@ -42,11 +41,35 @@ fetch(
       createContentBox.appendChild(createVote);
 
       createFrame.classList.add("oneCard");
+      createTitle.classList.add("contentTitle");
       createContentBox.classList.add("contentBox");
 
       createTitle.innerText = title;
       createContent.innerText = overview;
       createVote.innerText = "vote : " + voteAverage;
       createImage.src = "https://image.tmdb.org/t/p/w500/" + image;
+
+      createFrame.addEventListener("click", function () {
+        alert("영화 id : " + movieId);
+      });
     }
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  let input = document.querySelector("#inputBox").value;
+  let searchWord = input.toLowerCase();
+
+  function search() {
+    let titleData = document.querySelectorAll("#contentTitle");
+
+    for (let i = 0; i < titleData.length; i++) {
+      let cardData = titleData[i].parentElement;
+      if (searchWord.includes(titleData[i].toLowerCase())) {
+        cardData.style.display = 'flex';
+      } else {
+        cardData.style.display = 'none';
+      }
+    }
+  }
+  document.querySelector("#searchBtn").addEventListener("click", search());
+});
