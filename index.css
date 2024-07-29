@@ -2,6 +2,19 @@ body {
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+}
+
+.scrollBtn {
+    position: fixed;
+    top: 83%;
+    left: 93%;
+
+    font-size: 80px;
+    background-color:transparent;
+    border: none;
+}
 
 .titleBox {
     width: 100%;
@@ -13,13 +26,14 @@ body {
     align-items: center;
     text-align: center;
 
-    background-color: chocolate;
+    background-color: rgb(233, 150, 92);
 }
 
 .title {
     display: flex;
     font-weight: 700;
     font-size: 50px;
+    
     color: #622626;
 }
 
@@ -34,6 +48,29 @@ body {
     flex-direction: row;
 
     background-color: bisque;
+}
+
+.inputBox {
+    width: 500px;
+    height: 50px;
+    padding: 5px;
+
+    text-align: center;
+
+    border: none;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.searchBtn {
+    width: 60px;
+    height: 50px;
+    margin: 10px;
+
+    background-color: beige;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 .cardList{
@@ -55,6 +92,9 @@ body {
     border-radius: 10px;
 
     background-color: rgb(196, 148, 115);
+
+    
+    position: relative;
 }
 
 
@@ -62,6 +102,7 @@ body {
 .oneCard img {
     width: 100%;
     border-radius: 10px;
+
 }
 
 .contentBox {
@@ -71,5 +112,11 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
 
+.vote {
+    margin-left: auto;
+    margin-top: auto;
+    font-size: 24px;
+    font-weight: 700;
 }
