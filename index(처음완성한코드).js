@@ -1,9 +1,9 @@
 let cardList = document.querySelector(".cardList");
 
 // 페이지가 로드되면 커서를 검색창으로 자동 지정
-window.onload = function(){
-  document.getElementById("inputBox").focus()
-}
+window.onload = function () {
+  document.getElementById("inputBox").focus();
+};
 
 const options = {
   method: "GET",
@@ -53,7 +53,7 @@ fetch(
       createFrame.classList.add("oneCard");
       createTitle.classList.add("contentTitle");
       createContentBox.classList.add("contentBox");
-      createVote.classList.add("vote")
+      createVote.classList.add("vote");
 
       //생성된 태그에 값 붙이기
       createTitle.innerText = title;
@@ -61,11 +61,11 @@ fetch(
       createVote.innerText = "vote : " + voteAverage;
       createImage.src = "https://image.tmdb.org/t/p/w500/" + image;
 
-      // 카드 클릭하면 alert 뜨게 하기 
+      // 카드 클릭하면 alert 뜨게 하기
       createFrame.addEventListener("click", function () {
         alert("영화 id : " + movieId);
       });
-    })
+    });
   });
 
 // 돔이 완료되면 해당 이벤트를 추가하라
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     titleData.forEach((element) => {
       let searchWord = input.value.toLowerCase();
       let searchCard = element.innerText.toLowerCase();
-      let cardData = element.closest('.oneCard');
+      let cardData = element.closest(".oneCard");
 
       // 검색창에 입력된 값이 생성된 카드의 타이틀의 일부이면 보이고, 아니면 숨겨라
       if (searchCard.includes(searchWord)) {
@@ -93,10 +93,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // 검색 버튼을 클릭하면 search 함수를 실행하는 이벤트 생성
   document.querySelector(".searchBtn").addEventListener("click", search);
   //검색창에서 키를 눌렀다 떼면 함수가 발동하는 이벤트 생성
-  document.getElementById("inputBox").addEventListener("keyup", function(event) {
-    // 검색창에서 엔터키(keyCode 13)를 눌렀다 떼면 검색 버튼을 클릭하라.
-    if (event.keyCode === 13) {
-      document.querySelector(".searchBtn").click();
-    }
-  })
+  document
+    .getElementById("inputBox")
+    .addEventListener("keyup", function (event) {
+      // 검색창에서 엔터키(keyCode 13)를 눌렀다 떼면 검색 버튼을 클릭하라.
+      if (event.keyCode === 13) {
+        document.querySelector(".searchBtn").click();
+      }
+    });
 });
