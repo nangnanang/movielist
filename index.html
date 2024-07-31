@@ -9,19 +9,24 @@
   </head>
   <body>
     <div class="titleBox" id="titleBox">
-      <div class="title"><a href="./index.html">&nbsp;🏛️&nbsp;</a>인생에서 한 번은 봐야하는 영화 추천</div>
+      <h1 class="title">
+        <a href="./index.html">&nbsp;🏛️&nbsp;</a>인생에서 한 번은 봐야하는 영화
+        추천
+      </h1>
     </div>
 
-    <div class="searchBox">
+    <form class="searchBox">
       <input
         type="text"
         class="inputBox"
         id="inputBox"
         placeholder="영화 제목을 검색하세요"
       />
-      <button class="searchBtn">검색</button>
-    </div>
-    <button class="scrollBtn" style="z-index: 10;"><a href="index.html#titleBox">☝</a></button>
+      <button type="submit" class="searchBtn">검색</button>
+    </form>
+    <button class="scrollBtn" style="z-index: 10">
+      <a href="index.html#titleBox">☝</a>
+    </button>
 
     <div class="cardList" id="cardList"></div>
   </body>
