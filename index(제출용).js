@@ -51,7 +51,6 @@ const makeMovieCards = async () => {
 
     if (target.matches(".oneCard")) {
       alert(`영화 id: ${target.id}`);
-      console.log(`${target.id}`);
     } else {
       alert(`영화 id: ${target.parentNode.id}`);
     }
